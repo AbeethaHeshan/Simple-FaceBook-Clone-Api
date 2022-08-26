@@ -1,0 +1,19 @@
+{
+  "name": "mongo-db-fb-clone-backe-nd",
+  "version": "1.0.0",
+  "description": "Mongodb fb backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm app.js",
+    "nodemon": "nodemon app.js"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.3",
+    "nodemon": "^2.0.19"
+  }
+}
