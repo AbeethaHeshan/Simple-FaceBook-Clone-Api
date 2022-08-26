@@ -57,5 +57,25 @@ router.delete('/:id',async(req,res)=>{
      }
 })
 
+router.put('/:id',async(req,res) => {
+    try{
+
+         const user = await User.findById(req.params.id)   
+         user.firstName = req.body.firstName;
+         user.sureName = req.body.sureName;
+         user.gender = req.body.gender;
+         user.dateOfBirth = req.body.dateOfBirth;
+         user.password = req.body.password;
+         user.phoneNumber = req.body.phoneNumber;
+         user.email = req.body.email;
+         
+         const respose = await user.save()
+         res.json(respose)
+ 
+    }catch(err){
+        res.send('Err'+err)
+    }
+})
+
 
 module.exports  = router ;
