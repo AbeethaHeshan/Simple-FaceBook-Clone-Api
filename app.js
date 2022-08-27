@@ -1,11 +1,17 @@
 const express = require('express');
 const  mongoose = require('mongoose');
 const app = express()
+
+
 const port = 4000
 
 const user = require('./routers/user');
+const post = require('./routers/post')
+const login = require('./routers/login')
 
 app.use('/user',user)
+app.use('/post',post)
+app.use('/login',login)
 
 const url = 'mongodb://localhost/FaceBookDataBase'
 

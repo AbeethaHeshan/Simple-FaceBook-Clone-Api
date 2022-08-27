@@ -5,11 +5,12 @@ const postSchema = monoose.Schema({
                type:String,
                requred:true
            },
+           
            date:{
             type:Date,
             requred:true
           },
-          timestamps: true,
+  
           Title:{
             type:String,
             requred:true
