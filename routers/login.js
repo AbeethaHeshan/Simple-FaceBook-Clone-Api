@@ -7,19 +7,21 @@ router.use(express.json())
 
 router.post('/',async (req,res) => {
     console.log(req.body.email);
-    const er = await User.find({'email' : req.body.email , 'password' : req.body.password});
-  
+    
      try{
+          const er = await User.find({'email' : req.body.email , 'password' : req.body.password});
+          console.log(er[0].email +  "  " + er[0].password);
      if(req.body.email == er[0].email  &&  req.body.password == er[0].password){
-               
-                 res.json(er)
+                  console.log("ssd");
+                 res.send({message:"Success", data:er ,status:200 })
 
       }else{
-                res.json("Not-Found")
+                console.log("saasd");
+                res.send("Not-Found")
       }
     }  
      catch(err){
-          res.json(err)
+          res.send(err)
      }
 
 })
